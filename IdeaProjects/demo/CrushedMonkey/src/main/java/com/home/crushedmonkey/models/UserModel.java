@@ -1,24 +1,55 @@
-package com.home.crushedmonkey.controllers;
+package com.home.crushedmonkey.models;
 
-public class User {
+import javax.persistence.*;
 
+
+@Entity
+@Table(name="users")
+public class UserModel {
+
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+
+    @Column(nullable = false, length = 100)
     private String username;
+
+    @Column(nullable = false, length = 100)
     private String firstname;
+
+    @Column(nullable = false, length = 100)
     private String lastname;
+
+    @Column(nullable = false, length = 100)
     private String email;
+
+    @Column(nullable = false, length = 100)
     private String passwordHash;
 
-    public User() {
 
-    }
-
-    public User(String username, String firstname, String lastname, String email, String passwordHash) {
+    public UserModel(long id, String username, String firstname, String lastname, String email, String passwordHash) {
+        this.id = id;
         this.username = username;
         this.firstname = firstname;
         this.lastname = lastname;
         this.email = email;
         this.passwordHash = passwordHash;
     }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public UserModel() {
+
+    }
+
+
 
 
     public String getUsername() {

@@ -18,6 +18,12 @@ public class UserController {
     }
 
 
+    @GetMapping("/signup")
+    public String homeController() {
+        return "signup";
+    }
+
+
 
 
 }

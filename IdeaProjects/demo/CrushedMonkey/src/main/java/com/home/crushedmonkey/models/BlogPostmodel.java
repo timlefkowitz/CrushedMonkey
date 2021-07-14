@@ -48,6 +48,10 @@ public class BlogPostmodel {
         this.img = img;
     }
 
+    public BlogPostmodel() {
+
+    }
+
 
     // Getters and Setters
 

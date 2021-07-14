@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.ui.Model;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
+
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
@@ -41,7 +41,7 @@ public class BlogPostController {
         n.setTitle(title);
         n.setDescription(Description);
         n.setGenre(genre);
-        BlogPostmodel dbPost = blogDao.save(n);  //save the object
+        blogDao.saveAndFlush(n);  //save the object
         return "redirect:/home";
     }
 

@@ -12,16 +12,16 @@ public class BlogPostmodel {
     private long id;
 
 
-    @Column(nullable = false, length = 100)
+    @Column(length = 100)
     private String title;
 
-    @Column(nullable = false)
+    @Column()
     private String description;
 
-    @Column(nullable = false)
+    @Column()
     private String genre;
 
-    @Column(nullable = false)
+    @Column()
     private String img;
 
 

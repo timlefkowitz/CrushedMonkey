@@ -39,8 +39,18 @@
 
 
 <head>
-    <link rel="stylesheet" href="../static/css/stylesheet.css">
     <link rel="stylesheet" th:href="@{/static/css/stylesheet.css}"/>
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
 </head>
 
 <head>
@@ -48,6 +58,7 @@
 <!--    <title>CrushedMonkey</title>-->
     <link th:href="@{/css/stylesheet.css}" rel="stylesheet" />
 <!--    <script type="text/javascript" th:src="@{/js/actions.js}"></script>         this is if we want to add javascript   -->
+
 
 </head>
 
@@ -83,18 +94,17 @@
 
 <nav class="navbar text-nowrap">
 
-    <div style="align-items: center" th:each="blogPosts : ${BlogPosts}">
-        <h3 style="align-items: center"  th:text="${blogPosts.title}"></h3>
-        <p style="align-items: center"  th:text="${blogPosts.description}"><p/>
+<!--    <div style="align-items: center" th:each="blogPosts : ${BlogPosts}">-->
+<!--        <h3 style="align-items: center"  ></h3>-->
+<!--        <p style="align-items: center" ><p/>-->
 
 
-    <div class="box" style="width:100%">
-        <div class="glass"></div>
-        <div class="content" style="padding:0; margin:0;">
-
+        <div class="box w-100 p-3" style="width:100%;" th:each="blogPosts : ${BlogPosts}">
+            <div class="glass" th:text="${blogPosts.title}" style="word-wrap: break-word;"></div>
+            <div class="content" style="padding:0; margin:0;"  th:text="${blogPosts.description}">
+            </div>
         </div>
 
-    </div>
 
 
 
@@ -110,15 +120,6 @@
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
-
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
 
 </body>

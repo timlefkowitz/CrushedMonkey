@@ -21,7 +21,7 @@ public class BlogPostmodel {
     @Column()
     private String genre;
 
-    @Column()
+    @Column(nullable = true)
     private String img;
 
 

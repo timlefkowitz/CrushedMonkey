@@ -38,7 +38,7 @@ public class BlogPostController {
         n.setDescription(Description);
         n.setGenre(genre);
         blogDao.save(n);  //save the object
-        return "redirect:/home";
+        return "redirect:/";
     }
 
 

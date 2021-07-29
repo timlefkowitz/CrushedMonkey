@@ -24,6 +24,9 @@ public class BlogPostmodel {
     @Column(nullable = true)
     private String img;
 
+    @OneToOne
+    private UserModel owner;
+
 
     // Constructors
 

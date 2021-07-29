@@ -31,8 +31,11 @@ public class UserModel {
     @OneToOne
     private UserModel owner;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "BlogPostOwner")
-    private List<BlogPostmodel> BlogPostOwner;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
+    private List<BlogPostmodel> BlogPost;
+
+
+
 
 
     public UserModel(long id, String username, String firstname, String lastname, String email, String passwordHash) {

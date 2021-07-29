@@ -32,6 +32,15 @@ public class BlogPostmodel {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "BlogPost")
     private List<BlogImg> images;
 
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(
+            name = "ads_categories",
+            joinColumns = {@JoinColumn(name = "BlogPost")},
+            inverseJoinColumns = {@JoinColumn(name = "category_id")}
+    )
+    private List<BlogCategory> categories;
+
+
 
     // Constructors
 

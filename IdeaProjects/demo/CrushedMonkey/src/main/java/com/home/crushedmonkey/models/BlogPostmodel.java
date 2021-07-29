@@ -27,6 +27,9 @@ public class BlogPostmodel {
     @OneToOne
     private UserModel owner;
 
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "BlogPost")
+    private List<BlogImg> images;
+
 
     // Constructors
 

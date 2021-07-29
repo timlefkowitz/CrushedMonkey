@@ -1,6 +1,7 @@
 package com.home.crushedmonkey.models;
 
 import javax.persistence.*;
+import java.util.List;
 
 
 @Entity
@@ -26,6 +27,12 @@ public class UserModel {
 
     @Column(nullable = false, length = 100)
     private String passwordHash;
+
+    @OneToOne
+    private UserModel owner;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "BlogPostOwner")
+    private List<BlogPostmodel> BlogPostOwner;
 
 
     public UserModel(long id, String username, String firstname, String lastname, String email, String passwordHash) {

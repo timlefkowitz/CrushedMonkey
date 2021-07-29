@@ -40,6 +40,10 @@ public class BlogPostmodel {
     )
     private List<BlogCategory> categories;
 
+    @ManyToOne
+    @JoinColumn (name = "BlogPostOwner_id")
+    private UserModel user;
+
 
 
     // Constructors

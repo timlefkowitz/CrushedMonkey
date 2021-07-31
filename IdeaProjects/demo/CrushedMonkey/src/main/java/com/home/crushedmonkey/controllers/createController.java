@@ -1,11 +1,15 @@
 package com.home.crushedmonkey.controllers;
 
+import com.home.crushedmonkey.models.UserModel;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 public class createController {
+
+
+    private final UserModel usersDao;
 
 
 
@@ -15,7 +19,7 @@ public class createController {
     @GetMapping("/post")
     public String usersPost(Model model)
     {
-//        model.addAttribute("usersPost", new usersPost());
+        model.addAttribute("usersPost", new usersPost());
 //        model.addAttribute("fileStackApi",fileStackApi);
         return"UserPostingForm";
     }

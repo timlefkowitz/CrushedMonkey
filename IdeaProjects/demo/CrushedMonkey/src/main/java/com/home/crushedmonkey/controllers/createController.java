@@ -9,6 +9,41 @@ public class createController {
 
 
 
+
+    // Create a Users Post
+
+    @GetMapping("/post")
+    public String usersPost(Model model)
+    {
+//        model.addAttribute("usersPost", new usersPost());
+//        model.addAttribute("fileStackApi",fileStackApi);
+        return"UserPostingForm";
+    }
+
+    @PostMapping("/post")
+    public String addAnewUserPost(@RequestParam(name="title") String title,
+                                  @RequestParam(name="body") String description,
+                                  @RequestParam(name="imgPath") String imgPath
+
+
+    ){
+
+//        user user = (user) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+//
+//        usersPost n = new usersPost();
+//        n.setImgPath(imgPath);
+//        user username = n.getOwner(); //n.getOwner().getUsername isn't working but leaving this for the morning cup of coffee..
+//        n.setUsername(username);
+//        n.setTitle(title);
+//        n.setBody(description);
+//        usersPost.save(n);
+        return "redirect:/home";
+    }
+
+
+
+
+
     // User Sign Up
 
     @GetMapping("users/sign-up.html")
@@ -51,37 +86,6 @@ public class createController {
         return "redirect:/home";
     }
 
-
-
-    // Create a Users Post
-
-    @GetMapping("/post")
-    public String usersPost(Model model)
-    {
-//        model.addAttribute("usersPost", new usersPost());
-//        model.addAttribute("fileStackApi",fileStackApi);
-        return"UserPostingForm";
-    }
-
-    @PostMapping("/post")
-    public String addAnewUserPost(@RequestParam(name="title") String title,
-                                  @RequestParam(name="body") String description,
-                                  @RequestParam(name="imgPath") String imgPath
-
-
-    ){
-
-//        user user = (user) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-//
-//        usersPost n = new usersPost();
-//        n.setImgPath(imgPath);
-//        user username = n.getOwner(); //n.getOwner().getUsername isn't working but leaving this for the morning cup of coffee..
-//        n.setUsername(username);
-//        n.setTitle(title);
-//        n.setBody(description);
-//        usersPost.save(n);
-        return "redirect:/home";
-    }
 
 
 

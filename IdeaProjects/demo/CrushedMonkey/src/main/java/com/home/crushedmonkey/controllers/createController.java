@@ -83,4 +83,32 @@ public class createController {
         return "redirect:/home";
     }
 
+
+
+// Add a Friend
+
+    // User Sign Up
+
+    @GetMapping("/add")
+    public String getaddfriend(Model model)
+    {
+//        model.addAttribute("user", new user());
+//        model.addAttribute("fileStackApi", fileStackApi);
+        return"addfriend";
+    }
+
+    @PostMapping("/add")
+    public String postaddfriend(@RequestParam(name="username") String username
+
+
+    ){
+
+//        user n = new user();
+//        n.setUsername(username);
+//        usersDao.save(n);
+        return "redirect:/addfriend";
+    }
+
+
+
 }

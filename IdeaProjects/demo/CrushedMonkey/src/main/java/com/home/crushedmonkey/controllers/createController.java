@@ -21,7 +21,7 @@ public class createController {
     @GetMapping("/post")
     public String usersPost(Model model)
     {
-        model.addAttribute("BlogPostDao", new usersPost());
+        model.addAttribute("usersPost", new BlogPost());
 //        model.addAttribute("fileStackApi",fileStackApi);
         return"UserPostingForm";
     }

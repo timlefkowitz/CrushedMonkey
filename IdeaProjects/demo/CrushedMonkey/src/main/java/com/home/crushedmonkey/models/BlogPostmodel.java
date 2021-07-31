@@ -27,7 +27,7 @@ public class BlogPostmodel {
     private String img;
 
     @OneToOne
-    private UserModel owner;
+    private User owner;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "BlogPost")
     private List<BlogImg> images;
@@ -41,7 +41,7 @@ public class BlogPostmodel {
     private List<BlogCategory> categories;
 
     @ManyToOne
-    private UserModel user;
+    private User user;
 
 
 

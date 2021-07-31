@@ -6,7 +6,7 @@ import java.util.List;
 
 @Entity
 @Table(name="users")
-public class UserModel {
+public class User {
 
 
     @Id
@@ -29,7 +29,7 @@ public class UserModel {
     private String passwordHash;
 
     @OneToOne
-    private UserModel owner;
+    private User owner;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
     private List<BlogPostmodel> BlogPost;
@@ -38,7 +38,7 @@ public class UserModel {
 
 
 
-    public UserModel(long id, String username, String firstname, String lastname, String email, String passwordHash) {
+    public User(long id, String username, String firstname, String lastname, String email, String passwordHash) {
         this.id = id;
         this.username = username;
         this.firstname = firstname;
@@ -55,7 +55,7 @@ public class UserModel {
         this.id = id;
     }
 
-    public UserModel() {
+    public User() {
 
     }
 

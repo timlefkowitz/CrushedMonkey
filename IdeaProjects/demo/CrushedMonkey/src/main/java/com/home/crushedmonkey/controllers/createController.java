@@ -11,7 +11,9 @@ public class createController {
 
     private final UserModel usersDao;
 
-
+    public createController(UserModel usersDao) {
+        this.usersDao = usersDao;
+    }
 
 
     // Create a Users Post

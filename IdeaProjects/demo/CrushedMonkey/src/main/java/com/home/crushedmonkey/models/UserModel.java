@@ -32,7 +32,7 @@ public class UserModel {
     private UserModel owner;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
-    private List<BlogPostmodel> BlogPost;
+    private List<com.home.crushedmonkey.models.BlogPost> BlogPost;
 
 
 

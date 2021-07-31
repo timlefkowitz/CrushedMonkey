@@ -16,5 +16,5 @@ public class BlogCategory {
     private String name;
 
     @ManyToMany(mappedBy = "categories")
-    private List<BlogPostmodel> blogs;
+    private List<BlogPost> blogs;
 }

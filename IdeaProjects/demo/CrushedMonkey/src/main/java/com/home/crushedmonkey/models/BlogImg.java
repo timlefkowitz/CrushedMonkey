@@ -21,7 +21,7 @@ public class BlogImg {
 
     @ManyToOne
     @JoinColumn (name = "BlogPost_id")
-    private BlogPostmodel BlogPost;
+    private com.home.crushedmonkey.models.BlogPost BlogPost;
 
 
 }

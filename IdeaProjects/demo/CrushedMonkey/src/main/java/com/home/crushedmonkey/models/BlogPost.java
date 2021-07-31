@@ -7,7 +7,7 @@ import java.util.List;
 
 @Entity
 @Table(name="blogPosts")
-public class BlogPostmodel {
+public class BlogPost {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -51,7 +51,7 @@ public class BlogPostmodel {
 
     // Insert Constructor
 
-    public BlogPostmodel(String title, String description, String genre, String img) {
+    public BlogPost(String title, String description, String genre, String img) {
         this.title = title;
         this.description = description;
         this.genre = genre;
@@ -62,7 +62,7 @@ public class BlogPostmodel {
     // Update Constructor
 
 
-    public BlogPostmodel(long id, String title, String description, String genre, String img) {
+    public BlogPost(long id, String title, String description, String genre, String img) {
         this.id = id;
         this.title = title;
         this.description = description;
@@ -70,7 +70,7 @@ public class BlogPostmodel {
         this.img = img;
     }
 
-    public BlogPostmodel() {
+    public BlogPost() {
 
     }
 

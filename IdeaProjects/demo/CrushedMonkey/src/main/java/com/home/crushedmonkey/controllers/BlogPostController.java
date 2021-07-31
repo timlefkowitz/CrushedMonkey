@@ -2,7 +2,7 @@ package com.home.crushedmonkey.controllers;
 
 
 
-import com.home.crushedmonkey.models.BlogPostmodel;
+import com.home.crushedmonkey.models.BlogPost;
 import com.home.crushedmonkey.repos.BlogRepo;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,7 +23,7 @@ public class BlogPostController {
 
     @GetMapping("/create")
     public String IndexForCreate(Model viewModel){
-        viewModel.addAttribute("blogPost", new BlogPostmodel());
+        viewModel.addAttribute("blogPost", new BlogPost());
         return"create";
     }
 
@@ -32,7 +32,7 @@ public class BlogPostController {
                               @RequestParam(name="inputDescription") String Description,
                               @RequestParam(name="genre") String genre){
 
-        BlogPostmodel n = new BlogPostmodel();  //call the model && create a new object
+        BlogPost n = new BlogPost();  //call the model && create a new object
         //Set variables
         n.setTitle(title);
         n.setDescription(Description);

@@ -28,8 +28,8 @@ public class User {
     @Column(nullable = false, length = 100)
     private String passwordHash;
 
-    @OneToOne
-    private User owner;
+//    @OneToOne
+//    private User owner;//owner id is coming from < owner_id
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
     private List<com.home.crushedmonkey.models.BlogPost> BlogPost;

@@ -26,8 +26,8 @@ public class BlogPost {
     @Column(nullable = true)
     private String img;
 
-    @OneToOne
-    private User owner;
+//    @OneToOne
+//    private User owner;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "BlogPost")
     private List<BlogImg> images;

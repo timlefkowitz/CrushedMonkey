@@ -51,23 +51,23 @@ public class BlogPost {
 
     // Insert Constructor
 
-    public BlogPost(String title, String description, String genre, String img) {
+    public BlogPost(String title, String description, String genre, List<BlogImg> images) {
         this.title = title;
         this.description = description;
         this.genre = genre;
-        this.img = img;
+        this.images = images;
     }
 
 
     // Update Constructor
 
 
-    public BlogPost(long id, String title, String description, String genre, String img) {
+    public BlogPost(long id, String title, String description, String genre, List<BlogImg> images) {
         this.id = id;
         this.title = title;
         this.description = description;
         this.genre = genre;
-        this.img = img;
+        this.images = images;
     }
 
     public BlogPost() {
@@ -116,5 +116,29 @@ public class BlogPost {
 
     public void setImg(String img) {
         this.img = img;
+    }
+
+    public List<BlogImg> getImages() {
+        return images;
+    }
+
+    public void setImages(List<BlogImg> images) {
+        this.images = images;
+    }
+
+    public List<BlogCategory> getCategories() {
+        return categories;
+    }
+
+    public void setCategories(List<BlogCategory> categories) {
+        this.categories = categories;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

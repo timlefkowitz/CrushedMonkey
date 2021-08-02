@@ -137,6 +137,6 @@ box:nth-child(3):after {
 
 
 img {
-    object-fit: fill;
+    /*object-fit: fill;*/
 }
 

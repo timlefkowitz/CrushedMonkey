@@ -44,12 +44,6 @@
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
-
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
 </head>
 
@@ -102,8 +96,10 @@
         <div class="box w-100 p-3" style="width:100%;" th:each="blogPosts : ${BlogPosts}">
             <div class="glass" th:text="${blogPosts.title}" style="word-wrap: break-word;"></div>
             <div class="content" style="padding:0; margin:0;"  th:text="${blogPosts.description}">
+                <img th:src="${blogPosts.img}">
             </div>
         </div>
+
 
 
 
@@ -119,6 +115,14 @@
 <script data-ad-client="ca-pub-9282987433954760" async
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
+
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
 
 

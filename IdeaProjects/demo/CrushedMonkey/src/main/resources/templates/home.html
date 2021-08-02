@@ -96,7 +96,7 @@
         <div class="box w-100 p-3" style="width:100%;" th:each="blogPosts : ${BlogPosts}">
             <div class="glass" th:text="${blogPosts.title}" style="word-wrap: break-word;"></div>
             <div class="content" style="padding:0; margin:0;"  th:text="${blogPosts.description}">
-                <img th:src="${blogPosts.img}">
+                <img th:src="${blogPosts.images}">
             </div>
         </div>
 

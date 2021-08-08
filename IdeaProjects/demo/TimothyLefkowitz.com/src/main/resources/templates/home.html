@@ -36,10 +36,11 @@
 
 
 <div style="margin-top:15vh; margin-left: 15vh; margin-right: 15vh;align-content: center; align-items: center; display: flex ">
-    <img src="https://live.staticflickr.com/65535/51145425173_6479489f76_b.jpg" style="width:60vh;" class="images container">
+    <img src="https://live.staticflickr.com/65535/51145425173_6479489f76_b.jpg" style="width:60vh;" class="images container" id="welcomeButton">
 
 </div>
-<div class="images ontainer" style="font-family:Helvetica Neue, Helvetica, Arial, sans-serif; margin-top:2px; align-content: center; align-items: center; display: flex; font-size:3vh;">Hello World, I'm Timothy <br><h6>I'm a Software Developer, 3d Artist, Photographer from San Antonio, Texas</h6></div>
+<div class="images ontainer" style="font-family:Helvetica Neue, Helvetica, Arial, sans-serif; margin-top:2px; align-content: center; align-items: center; display: flex; font-size:3vh;">Hello World, I'm Timothy </div>
+<div class="images ontainer" style="font-family:Helvetica Neue, Helvetica, Arial, sans-serif; margin-top:2px; align-content: center; align-items: center; display: flex; font-size:3vh;"><h6>I'm a Software Developer, 3d Artist, Photographer from San Antonio, Texas</h6></div>
 
 
 
@@ -51,6 +52,14 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script>
     console.log("Hello World")
+
+    $(document).ready(function(){
+        $("#welcomeButton").click(function(){
+            window.location = index.html;
+        });
+    });
+
+
 </script>
 </body>
 </html>

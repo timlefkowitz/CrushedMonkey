@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body, html {
+            height: 100%;
+            margin: 0;
+            font: 400 15px/1.8 "Lato", sans-serif;
+            color: #777;
+        }
+
+        .bgimg-1, .bgimg-2, .bgimg-3 {
+            position: relative;
+            opacity: 0.65;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+        }
+        .bgimg-1 {
+            background-image: url("https://live.staticflickr.com/65535/51145425173_6479489f76_b.jpg");
+            min-height: 100%;
+        }
+
+        .bgimg-2 {
+            background-image: url("img_parallax2.jpg");
+            min-height: 400px;
+        }
+
+        .bgimg-3 {
+            background-image: url("img_parallax3.jpg");
+            min-height: 400px;
+        }
+
+        .caption {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 100%;
+            text-align: center;
+            color: #000;
+        }
+
+        .caption span.border {
+            background-color: #111;
+            color: #fff;
+            padding: 18px;
+            font-size: 25px;
+            letter-spacing: 10px;
+        }
+
+        h3 {
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            font: 20px "Lato", sans-serif;
+            color: #111;
+        }
+        .stackTop{
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            margin-top: 10%;
+            /*position: absolute;top:15%;*/
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%; /* Need a specific value to work */
+
+        }
+
+        img
+        {
+
+            margin: auto;
+        }
+
+
+        .cards-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 40px;
+            flex-wrap: wrap;
+        }
+        .card {
+            width: 300px;
+            margin: 10px auto;
+            border-radius: 1px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            border-radius: 2px;
+            transition: 0.2s;
+        }
+        .card:hover {
+            box-shadow: 0 0 25px rgba(0,0,0,0.15);
+            transition: 0.3s;
+        }
+        .card-slice {
+            width: 300px;
+            margin: 10px auto;
+            border-radius: 1px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            position: relative;
+            border-radius: 2px;
+            transition: 0.2s;
+        }
+        .card-slice:hover {
+            transition: 0.3s;
+        }
+        .card-image {
+            background-size: cover;
+            color: black;
+            height: 175px;
+            border-top-left-radius: 2px;
+            border-top-right-radius: 2px;
+            background-position: center;
+        }
+        .card-image-slice {
+            background-size: cover;
+            height: 175px;
+            border-top-left-radius: 2px;
+            border-top-right-radius: 2px;
+            background-position: center;
+        }
+        .work-skills {
+            color: lightgray;
+            margin: 5px 0px;
+            font-size: 14px;
+        }
+        .card-footer {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        .work-name {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+        .work-description {
+            margin-top: 5px;
+            font-size: 14px;
+            font-weight: lighter;
+            color: grey;
+        }
+        .btn-learn-more {
+            margin: 0px auto;
+            margin-top: 35px;
+            color: #42A5F5;
+            border: 1px solid #42A5F5;
+            padding: 10px 15px;
+            width: 55%;
+            text-align: center;
+            border-radius: 3px;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: 0.2s;
+            font-size: 18px;
+            z-index: 4;
+        }
+        .btn-learn-more:hover {
+            text-decoration: none;
+            opacity: 1;
+            transition: 0.2s;
+        }
+        .card-link {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+            z-index:2;
+            background: black;
+            opacity: 0;
+        }
+        .contact-container {
+            width: 70%;
+            margin: 40px auto;
+            text-align: center;
+        }
+        .contact-container a {
+            text-decoration: none;
+            color: #42A5F5;
+        }
+
+        @media (max-width: 750px) {
+            .card {
+                width: 300px;
+            }
+            .card-footer {
+                padding: 20px;
+            }
+        }
+
+
+        /* Turn off parallax scrolling for tablets and phones */
+        @media only screen and (max-device-width: 1024px) {
+            .bgimg-1, .bgimg-2, .bgimg-3 {
+                background-attachment: scroll;
+            }
+        }
+
+
+    </style>
+
+<!--    Devicon Icons-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.12.0/devicon.min.css">
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+    <!--- J Query -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+
+    <!-- BootStrap -->
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    <!-- StyleSheet -->
+    <link rel="stylesheet" href="stylesheet/styles.css">
+
+
+</head>
+<body>
+
+<div id="jnavbar"></div>
+
+
+<div class="container stackTop">
+    <div class="row text-center">
+        <div class="col">
+
+        </div>
+        <div class="col-9 text-center">
+            <p id="demo"></p>
+        </div>
+
+        <div class="col">
+            <p>
+            </p>
+            <p>
+            </p>
+        </div>
+
+
+    </div>
+</div>
+
+<div class="bgimg-1">
+    <div class="caption">
+        <br><span class="border" style="width:100%;">My Skills</span><br>
+        <p></p>
+        <br><span class="border" style="width:100%;"><i class="devicon-java-plain"></i>Java</span><br>
+        <br><span class="border" style="width:100%;"><i class="devicon-javascript-plain"></i>Javascript</span><br>
+        <br><span class="border" style="width:100%;"><i class="devicon-python-plain"></i>Python</span><br>
+        <br><span class="border" style="width:100%;"><i class="devicon-spring-plain"></i>Spring</span><br>
+        <br><span class="border" style="width:100%;"><i class="devicon-css3-plain"></i>CSS & <i class="devicon-html5-plain"></i>HTML5</span><br>
+        <br><span class="border" style="width:100%;"><i class="devicon-mysql-plain"></i>MySql & <i class="devicon-jquery-plain"></i>Jquery</span><br>
+        <br><span class="border" style="width:100%;">Blender</span><br>
+        <br><span class="border" style="width:100%;"><i class="devicon-photoshop-plain"></i>Photoshop and <i class="devicon-premierepro-plain"></i>Premiere</span><br>
+        <br><span class="border" style="width:100%;">Database Design</span><br>
+    </div>
+</div>
+
+<div style="color: #777;background-color:white;text-align:center;padding:50px 80px;">
+
+    <h5 class="text-color-gray" style="text-align: center; justify-content: center; margin-bottom: 5%;">It is impossible for a man to learn what he thinks he already knows <p></p>—Epictetus</h5>
+
+
+    <h3 style="text-align:center;">HelpTank wins 3rd place in my first codeathon</h3>
+    <p>Help-Tank is a Full-stack web application built with, HTML, CSS, JavaScript, and jQuery. This was a mapbox app to show where help is needed to homeless or those in need. Help-Tanks major goal was to simplify help that is in your area.</p>
+
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active" style="align-items: center">
+                <img class="d-block w-50" src="https://www.civtech-sa.com/wp-content/uploads/2021/06/WINNERS-1st-Veteran-Connect-2nd-VOSB-Connection-3rd-Help-Tank-USAA-Favorite-Help-Tank.png" alt="First slide">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="https://live.staticflickr.com/65535/51260776675_38f33988bd_k.jpg" alt="Second slide">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="https://live.staticflickr.com/65535/51259733676_42b8f76077_b.jpg" alt="Third slide">
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+
+
+<div style="color: #777;background-color:white;text-align:center;padding:50px 80px;">
+
+
+
+
+    <h3 style="text-align:center;">My Portfolio</h3>
+
+
+<!--            Portfolio Cards-->
+
+
+    <div class="work">
+        <div class="cards-container">
+            <div class="card" style="margin: 70px auto";>
+
+
+<!--                HelpTank-->
+                <div class="card-image" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.0) 0%, rgba(0,36,61,0.0) 50%), url('https://live.staticflickr.com/65535/51260776675_a207e77e5c_h.jpg');">
+                    <a class="card-link" href="http://www.florentlienard.com" ></a></div>
+                <div class="card-footer">
+                    <span class="work-skills">UX - DESIGN - DEVELOPMENT</span>
+                    <span class="work-name">HelpTank</span>
+                    <span class="work-description">Help-Tank is a Full-stack web application built with, HTML, CSS, JavaScript, and jQuery. This was a mapbox app to show where help is needed to homeless or those in need. Help-Tanks major goal was to simplify help that is in your area.</span>
+                    <a href="http://www.florentlienard.com" class = "btn-learn-more">Learn more</a>
+                </div>
+            </div>
+
+
+<!--                Coffee Project-->
+            <div class="card" style="margin: 70px auto";>
+                <div class="card-image-slice" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.0) 0%, rgba(0,36,61,0.0) 50%), url('https://live.staticflickr.com/65535/51259775066_1d38ff0f4e_b.jpg');">
+                    <a class="card-link" href="http://www.florentlienard.com" ></a></div>
+                <div class="card-footer">
+                    <span class="work-skills">UX - DESIGN - DEVELOPMENT</span>
+                    <span class="work-name">The Coffee Project</span>
+                    <span class="work-description">The Coffee Project is a JavaScript application to allow users to search, add, and delete coffee roasts, styled with Bootstrap and using local memory from javascript. This was a paired programming project with Roland Valdez and myself.</span>
+                    <a href="http://www.florentlienard.com" class = "btn-learn-more">Learn more</a>
+                </div>
+            </div>
+
+<!--            Javascript Calculator-->
+
+            <div class="card" style="margin: 70px auto";>
+                <div class="card-image-slice" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.0) 0%, rgba(0,36,61,0.0) 50%), url('https://live.staticflickr.com/65535/51260503839_fd075699a5_h.jpg');">
+                    <a class="card-link" href="PhotonLife/calc.html" ></a></div>
+                <div class="card-footer">
+                    <span class="work-skills">UX - DESIGN - DEVELOPMENT</span>
+                    <span class="work-name">JavaScript Calculator</span>
+                    <span class="work-description">A great learning experiance in UX and javascript</span>
+                    <a href="http://www.florentlienard.com" class = "btn-learn-more">Learn more</a>
+                </div>
+            </div>
+
+
+
+<!--                tims fav foods-->
+            <div class="card" style="margin: 70px auto";>
+                <div class="card-image-slice" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.0) 0%, rgba(0,36,61,0.0) 50%), url('https://live.staticflickr.com/65535/51260503804_ed536c80d8_b.jpg');">
+                    <a class="card-link" href="http://www.florentlienard.com" ></a></div>
+                <div class="card-footer">
+                    <span class="work-skills">UX - DESIGN - DEVELOPMENT - API's - JavaScript</span>
+
+                    <span class="work-name">Tims Favorite Foods</span>
+                    <span class="work-description">This was my first experiance working with an API. My favorite Foods around San Antonio</span>
+                    <a href="PhotonLife/favfoods.html" class = "btn-learn-more">Learn more</a>
+                </div>
+            </div>
+
+</div>
+
+<div class="bgimg-2">
+    <div class="caption">
+        <span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;">LESS HEIGHT</span>
+    </div>
+</div>
+
+<div style="position:relative;">
+    <div style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;">
+        <p>Scroll up and down to really get the feeling of how Parallax Scrolling works.</p>
+    </div>
+</div>
+
+<div class="bgimg-3">
+    <div class="caption">
+        <span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;">SCROLL UP</span>
+    </div>
+</div>
+
+<div style="position:relative;">
+    <div style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;">
+        <p>Scroll up and down to really get the feeling of how Parallax Scrolling works.</p>
+    </div>
+</div>
+
+<div class="bgimg-1">
+    <div class="caption">
+        <span class="border">COOL!</span>
+    </div>
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script src="js/js.js"></script>
+
+<script>
+    var i = 0;
+    var txt = 'Hi, My name is Timothy.\n Developer, \n Photographer, \n Computer Geek and Adventurer. This is some of my recent studies and collections of work.'; /* The text */
+    var speed = 50; /* The speed/duration of the effect in milliseconds */
+
+    function typeWriter() {
+        if (i < txt.length) {
+            document.getElementById("demo").innerHTML += txt.charAt(i);
+            i++;
+            setTimeout(typeWriter, speed);
+        }
+    }
+    typeWriter();
+</script>
+
+
+
+
+</body>
+</html>

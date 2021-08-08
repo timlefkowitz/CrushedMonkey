@@ -49,7 +49,7 @@ public class SecurityConfiguration<UserDetailsLoader> extends WebSecurityConfigu
                 /* Pages that can be viewed without having to log in */
                 .and()
                 .authorizeRequests()
-                .antMatchers("/", "/index", "/sign-up", "/login", "/index?logout") // anyone can see these pages
+                .antMatchers("/weathermap", "/NewIndex", "/min", "/magazine", "/mag", "konami", "index", "home", "flickarchive", "favfoods", "contactsManager", "contact", "coffee", "code", "calc", "3d") // anyone can see these pages
                 .permitAll()
                 /* Pages that require authentication */
                 .and()

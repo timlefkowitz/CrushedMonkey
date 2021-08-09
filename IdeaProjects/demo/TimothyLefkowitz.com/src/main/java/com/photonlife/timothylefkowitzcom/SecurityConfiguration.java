@@ -1,6 +1,7 @@
 package com.photonlife.timothylefkowitzcom;
 
 
+import com.photonlife.timothylefkowitzcom.services.UserDetailsLoader;
 import org.apache.catalina.User;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -12,7 +13,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 
 @Configuration
-public class SecurityConfiguration<UserDetailsLoader> extends WebSecurityConfigurerAdapter {
+public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     private UserDetailsLoader usersLoader;
 

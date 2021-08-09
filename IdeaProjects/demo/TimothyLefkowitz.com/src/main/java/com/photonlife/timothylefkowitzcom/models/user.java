@@ -1,9 +1,7 @@
 package com.photonlife.timothylefkowitzcom.models;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
-import java.util.Collection;
 import java.util.List;
 
 @Entity // << this is how hibernate knows to make tables out of the class
@@ -129,7 +127,7 @@ public class  user {
         this.imgPath = imgPath;
 //        this.location = location;
         this.originalavatar = originalavatar;
-        this.BlogPost = BlogPost;
+//        this.BlogPost = BlogPost;
 //        this.contactListOwner = contactListOwner;
 //        this.contactListEntity = contactListEntity;
 
@@ -153,7 +151,7 @@ public class  user {
         this.imgPath = imgPath;
 //        this.location = location;
         this.originalavatar = originalavatar;
-        this.BlogPost = BlogPost;
+//        this.BlogPost = BlogPost;
 //        this.contactListOwner = contactListOwner;
 //        this.contactListEntity = contactListEntity;
 
@@ -179,7 +177,7 @@ public class  user {
 //        isAdmin = copy.isAdmin;
 //        location = copy.location;
         originalavatar = copy.originalavatar;
-        BlogPost = copy.BlogPost;
+//        BlogPost = copy.BlogPost;
 //        contactListOwner = copy.contactListOwner;
 //        contactListEntity = copy.contactListEntity;
 
@@ -351,4 +349,4 @@ public class  user {
 //    public void setGroupComment(List<com.home.facebookclone.models.groupComment> groupComment) {
 //        this.groupComment = groupComment;
     }
-}
+

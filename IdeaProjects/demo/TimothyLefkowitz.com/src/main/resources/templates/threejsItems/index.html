@@ -102,7 +102,7 @@
             mtlLoader.setPath('assets/');
             mtlLoader.load('xyz.mtl', function (materials) {
 
-                materials.preload();
+                materials.preload('assets/levelOne2.png');
 
                 materials.materials.default.map.magFilter = THREE.NearestFilter;
                 materials.materials.default.map.minFilter = THREE.LinearFilter;

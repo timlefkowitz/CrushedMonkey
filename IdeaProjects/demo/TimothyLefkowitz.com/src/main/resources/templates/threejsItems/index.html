@@ -132,7 +132,19 @@
             controls = new THREE.OrbitControls(camera, renderer.domElement);
             controls.enableDamping = true;
             controls.dampingFactor = 0.25;
-            controls.enableZoom = false;
+            controls.enableZoom = true;
+            controls.enableKeys = true;
+            camera.position.set( 0, -20, 100 );
+
+
+            controls.keys = {
+                LEFT: 'ArrowLeft', //left arrow
+                UP: 'ArrowUp', // up arrow
+                RIGHT: 'ArrowRight', // right arrow
+                BOTTOM: 'ArrowDown' // down arrow
+            }
+
+            controls.update();
 
             /* Events */
 
@@ -145,6 +157,7 @@
 
             camera.aspect = window.innerWidth / window.innerHeight;
             camera.updateProjectionMatrix();
+            controls.update();
 
             renderer.setSize(window.innerWidth, window.innerHeight);
 
@@ -179,6 +192,13 @@
         function animate() {
 
             requestAnimationFrame(animate);
+
+            controls.keys = {
+                LEFT: 'ArrowLeft', //left arrow
+                UP: 'ArrowUp', // up arrow
+                RIGHT: 'ArrowRight', // right arrow
+                BOTTOM: 'ArrowDown' // down arrow
+            }
 
             controls.update();
 
